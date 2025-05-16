@@ -1,3 +1,5 @@
+import profilePicDrawing from '../assets/profilePicDrawing.png';
+
 export default function About() {
   return (
     <div className="about-container">
@@ -14,7 +16,9 @@ export default function About() {
           ever-changing field.
         </p>
       </div>
-      <div className="about-right"></div>
+      <div className="about-right">
+        <img src={profilePicDrawing} alt="profilePic" />
+      </div>
     </div>
   );
 }
