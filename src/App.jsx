@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Element } from 'react-scroll';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import ProjectCard from './components/ProjectCard';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Projects from './pages/Projects';
 
 import './styles/globals.css';
 
@@ -61,10 +61,10 @@ export default function App() {
 
       <Element name="projects">
         <div>
-          <ProjectCard />
+          <Projects />
         </div>
       </Element>
-
+      <br />
       <Element name="contact">
         <div>
           <Contact />

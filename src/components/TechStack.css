@@ -1,0 +1,76 @@
+.techstack-section {
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.techstack-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.techstack-category {
+  margin-bottom: 1rem;
+}
+
+.techstack-category h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.techstack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.techstack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.techstack-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0.3rem;
+  object-fit: contain;
+}
+
+.dark-mode .techstack-icon {
+  filter: invert(1);
+}
+
+/* BUTTONS */
+.techstack-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: #0077ff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #005ecc;
+}

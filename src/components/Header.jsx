@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-scroll';
 
 export default function Header() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  function toggleTheme() {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle('dark-mode');
+  }
+
   return (
-    <header>
-      <div className="logo-container">CP</div>
-      <div>😁</div>
-      <nav>
-        <ul className="navbar-container">
+    <header className="site-header">
+      <div className="logo">CP</div>
+
+      <nav className="navbar">
+        <ul className="menu">
           <li>
             <Link to="about" smooth={true} duration={500} offset={-60}>
               About
@@ -24,6 +32,14 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+
+      <button
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label="Toggle theme"
+      >
+        {darkMode ? '🌙' : '☀️'}
+      </button>
     </header>
   );
 }
