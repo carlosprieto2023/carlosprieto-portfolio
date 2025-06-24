@@ -18,9 +18,7 @@ import jsonapiIcon from '../assets/jsonapiIcon.png';
 import mongodbIcon from '../assets/mongodbIcon.png';
 import postgressqlIcon from '../assets/postgressqlIcon.png';
 
-import resume from '../assets/carlosprieto-resume.png';
-
-import './TechStack.css';
+import '../styles/techstack.css';
 
 const languages = [
   { name: 'JavaScript', icon: javascriptIcon },
@@ -59,9 +57,8 @@ function renderStack(stack) {
 
 export default function TechStack() {
   return (
-    <section className="techstack-section">
+    <div>
       <h2 className="techstack-title">Tech Stack</h2>
-
       <div className="techstack-category">
         <h3>Languages</h3>
         <ul className="techstack-list">{renderStack(languages)}</ul>
@@ -78,15 +75,6 @@ export default function TechStack() {
         <h3>Databases & Other</h3>
         <ul className="techstack-list">{renderStack(databasesAndOther)}</ul>
       </div>
-
-      <div className="techstack-buttons">
-        <a href="mailto:carlosdos81841@gmail.com" className="btn">
-          Email Me
-        </a>
-        <a href={resume} download className="btn">
-          Download Résumé
-        </a>
-      </div>
-    </section>
+    </div>
   );
 }

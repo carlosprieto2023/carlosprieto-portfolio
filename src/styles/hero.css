@@ -1,0 +1,119 @@
+.hero-section {
+  margin-top: var(--header-height);
+  padding: 1rem 1.5rem;
+  position: relative;
+  background: url('/src/assets/background.PNG') center/cover no-repeat;
+  color: #e6edf3;
+  text-align: center;
+  min-height: calc(var(--vh, 1vh) * 100);
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-container {
+  /* border: 1px solid; */
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Larger image container */
+.hero__image__container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ccc;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Smaller heading */
+.hero-container h1 {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+/* Smaller paragraph */
+.hero-container p {
+  /* border: 1px dotted; */
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+/* CTA button */
+.hero-cta {
+  /* border: 1px dotted; */
+  padding: 0.75rem 2rem;
+  background-color: #02a676;
+  min-width: 150px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.hero-cta:hover {
+  background-color: #029c6b;
+}
+
+/* Highlighted text */
+.highlight {
+  font-weight: bold;
+  background-image: linear-gradient(120deg, #02a676 0%, #00c9a7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero__image__container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-cta {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .hero__content {
+    gap: 1.25rem;
+  }
+
+  .hero .container {
+    padding: 1rem;
+  }
+}

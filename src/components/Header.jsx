@@ -1,45 +1,68 @@
-import { useState } from 'react';
-import { Link } from 'react-scroll';
+import { useEffect, useState } from 'react';
+import '../styles/header.css';
 
 export default function Header() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  function toggleTheme() {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle('dark-mode');
-  }
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.header-container');
+      if (window.scrollY > 50) {
+        header.classList.add('shrink');
+      } else {
+        header.classList.remove('shrink');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="site-header">
-      <div className="logo">CP</div>
+    <header className="header-container">
+      <div className="logo">
+        <a href="#hero" aria-label="Go to top">
+          CP
+        </a>
+      </div>
 
-      <nav className="navbar">
-        <ul className="menu">
+      <button
+        className={`hamburger ${menuOpen ? 'open' : ''}`}
+        onClick={toggleMenu}
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={menuOpen}
+      >
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </button>
+
+      <nav
+        className={`nav ${menuOpen ? 'open' : ''}`}
+        aria-label="Main navigation"
+      >
+        <ul className="nav-links">
           <li>
-            <Link to="about" smooth={true} duration={500} offset={-60}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="projects" smooth={true} duration={500} offset={-60}>
+            <a href="#projects" onClick={toggleMenu}>
               Projects
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="contact" smooth={true} duration={500} offset={-60}>
+            <a href="#about" onClick={toggleMenu}>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#contact" onClick={toggleMenu}>
               Contact
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
-
-      <button
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label="Toggle theme"
-      >
-        {darkMode ? '🌙' : '☀️'}
-      </button>
     </header>
   );
 }

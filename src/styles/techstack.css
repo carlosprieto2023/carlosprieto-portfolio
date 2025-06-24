@@ -1,0 +1,38 @@
+.techstack-category {
+  margin-bottom: 2rem;
+}
+
+.techstack-category h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.techstack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  list-style: none;
+}
+
+.techstack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.techstack-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0.3rem;
+  object-fit: contain;
+  filter: brightness(1) invert(1);
+}
+
+.dark-mode .techstack-icon {
+  filter: invert(1);
+}

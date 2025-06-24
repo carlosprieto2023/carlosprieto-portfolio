@@ -1,6 +1,6 @@
 import taskManagerImage from '../assets/quickNoteApp.png';
-import ProjectCard from '../components/ProjectCard';
-// import './Projects.css';
+import '../styles/projects.css';
+import ProjectCard from './Card';
 
 const projects = [
   {
@@ -28,11 +28,11 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="projects-section" id="projects">
-      <h2 className="projects-heading">Projects</h2>
+    <section id="projects" className="projects-section">
+      <h2>Projects</h2>
       <div className="projects-grid">
-        {projects.map((project, i) => (
-          <ProjectCard key={i} {...project} />
+        {projects.map((project) => (
+          <ProjectCard key={project.id} {...project} />
         ))}
       </div>
     </section>
