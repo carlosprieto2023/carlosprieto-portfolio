@@ -40,14 +40,3 @@
 .footer-links a:hover {
   color: #02a676;
 }
-
-/* ===== Responsive ===== */
-@media (max-width: 640px) {
-  .footer {
-    padding: 2rem 1rem;
-  }
-
-  .footer-links {
-    gap: 1rem;
-  }
-}

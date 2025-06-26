@@ -1,20 +1,23 @@
 import profilePicDrawing from '../assets/profilePicDrawing.png';
-import '../styles/hero.css';
+import Bubble from '../components/Bubble';
+import '../styles/Hero1.css';
+// import '../styles/hero.css';
 
 export default function Hero() {
   return (
     <section className="hero-section" id="hero">
       {/* Background overlay */}
       <div className="hero-overlay"></div>
+      <Bubble />
 
       <div className="hero-container">
-        <div className="hero__content">
+        <div className="hero-content">
           {/* Profile Image */}
-          <div className="hero__image__container">
+          <div className="hero-image-container">
             <img
               src={profilePicDrawing}
               alt="Carlos Prieto portrait illustration"
-              className="hero__image"
+              className="hero-image"
             />
           </div>
 
@@ -23,7 +26,9 @@ export default function Hero() {
             Hi, I’m Carlos Prieto
             <br />
             a&nbsp;
-            <span className="highlight">Full Stack Software Developer</span>
+            <span className="hero-highlight">
+              Full Stack Software Developer
+            </span>
             &nbsp;based in Columbus, Ohio.
           </h1>
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import '../styles/header.css';
+import '../styles/Header1.css';
+// import '../styles/header.css';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ export default function Header() {
 
   return (
     <header className="header-container">
-      <div className="logo">
+      <div className="header-logo">
         <a href="#hero" aria-label="Go to top">
           CP
         </a>

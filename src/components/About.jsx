@@ -1,9 +1,11 @@
-import '../styles/about.css';
+import '../styles/About1.css';
+// import '../styles/about.css';
 
 export default function About() {
   return (
-    <section className="about-section" id="about">
+    <section id="about">
       <div className="about-container">
+        <img src="" alt="" />
         <h2>About Me</h2>
         <p>
           Hi, I'm Carlos Prieto — a passionate full stack software developer

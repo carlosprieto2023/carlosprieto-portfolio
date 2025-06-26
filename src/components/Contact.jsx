@@ -1,10 +1,11 @@
 import resume from '../assets/carlosprieto-resume.png';
-import '../styles/contact.css';
+// import '../styles/contact.css';
+import '../styles/Contact1.css';
 import TechStack from './TechStack';
 
 export default function Contact() {
   return (
-    <section className="contact-section" id="contact">
+    <section id="contact">
       <div className="contact-container">
         {/* <h2>Let's Connect</h2>
         <p>

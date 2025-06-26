@@ -1,14 +1,15 @@
-import '../styles/footer.css';
+import '../styles/Footer1.css';
+// import '../styles/footer.css';
 
 export default function Footer() {
   return (
-    <div className="footer">
-      <div className="container">
-        <p>
-          Carlos Prieto -&copy; {new Date().getFullYear()} MyApp. All rights
-          reserved.
-        </p>
-        <div className="footer-links">
+    <div className="footer-container">
+      <p>
+        Carlos Prieto -&copy; {new Date().getFullYear()} MyApp. All rights
+        reserved.
+      </p>
+      <ul className="footer-links">
+        <li>
           <a
             href="https://www.linkedin.com/in/carlos-prieto0991/"
             target="_blank"
@@ -16,6 +17,8 @@ export default function Footer() {
           >
             LinkedIn
           </a>
+        </li>
+        <li>
           <a
             href="https://github.com/carlosprieto2023"
             target="_blank"
@@ -23,8 +26,8 @@ export default function Footer() {
           >
             Github
           </a>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   );
 }
