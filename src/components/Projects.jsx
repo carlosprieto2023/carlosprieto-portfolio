@@ -29,12 +29,14 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="projects-container">
-      <h2>Projects</h2>
-      <div className="">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} {...project} />
-        ))}
+    <section className="projects-section" id="projects">
+      <div className="projects-container">
+        <h2>Projects</h2>
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} {...project} />
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,12 +1,17 @@
 import '../styles/About1.css';
-// import '../styles/about.css';
 
 export default function About() {
   return (
-    <section id="about">
-      <div className="about-container">
-        <img src="" alt="" />
-        <h2>About Me</h2>
+    <section id="about" className="about-section">
+      {/* <div className="about-image-container">
+        <img
+          src="/path-to-your-image.jpg"
+          alt="Carlos Prieto"
+          className="about-image"
+        />
+      </div> */}
+      <h2>About </h2>
+      <div className="about-content">
         <p>
           Hi, I'm Carlos Prieto — a passionate full stack software developer
           based in Columbus, Ohio. I specialize in building responsive,
@@ -30,8 +35,7 @@ export default function About() {
         </p>
         <p>
           I'm always open to new opportunities, whether it's a freelance
-          project, a collaborative build, or a full-time position. Let’s connect
-          and build something great!
+          project, a collaborative build, or a full-time position.
         </p>
       </div>
     </section>

@@ -1,16 +1,12 @@
 .hero-section {
-  margin-top: 60px;
-  height: calc(100vh - 60px);
+  box-sizing: border-box;
+  height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e6edf3;
   background: url('/src/assets/background.PNG') center/cover no-repeat;
-  text-align: center;
-  border: 1px solid transparent;
-  padding: 0 1rem;
-  box-sizing: border-box;
 }
 
 .hero-overlay {
@@ -29,16 +25,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1rem;
+  text-align: center;
   box-sizing: border-box;
 }
 
 .hero-content {
-  padding: 1.5rem 1rem;
+  padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
+  color: #e6edf3;
 }
 
 .hero-image-container {
@@ -95,9 +92,8 @@
 /* Tablet */
 @media (max-width: 768px) {
   .hero-section {
-    height: 100vh;
-    margin-top: 0;
-    padding-top: 60px;
+    height: 100vh - var(--header-height);
+    margin-top: var(--header-height);
     flex-direction: column;
     background-position: center;
     background-size: cover;
