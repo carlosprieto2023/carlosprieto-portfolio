@@ -116,6 +116,7 @@
 
 /* Hero Content Right */
 .hero-content-right {
+  /* border: 1px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,8 +238,8 @@
   }
 
   .hero-content-right img {
-    width: 14rem;
-    height: 14rem;
+    /* width: 14rem;
+    height: 14rem; */
   }
 
   .hero-content-left h1 {

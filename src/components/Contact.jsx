@@ -77,6 +77,20 @@ export default function Contact({ lang }) {
   };
 
   const techStack = {
+    titles: {
+      en: {
+        main: 'TECH STACK',
+        languages: 'Languages',
+        frameworks: 'Frameworks & Libraries',
+        databases: 'Databases & Other',
+      },
+      es: {
+        main: 'STACK TECNOLÓGICO',
+        languages: 'Lenguajes',
+        frameworks: 'Frameworks y Librerías',
+        databases: 'Bases de Datos y Otros',
+      },
+    },
     languages: [
       { name: 'JavaScript', icon: 'logos:javascript' },
       { name: 'Python', icon: 'logos:python' },
@@ -101,7 +115,6 @@ export default function Contact({ lang }) {
       { name: 'Figma', icon: 'logos:figma' },
     ],
   };
-
   return (
     <section className="contact__section" id="contact">
       <div className="contact__index">
@@ -118,9 +131,9 @@ export default function Contact({ lang }) {
           {/* <img src={teckStackImg} alt="Tech Stack" /> */}
           {/* Teck Stack */}
           <div className="tech-stack">
-            <h2>TECH STACK</h2>
+            <h2>{techStack.titles[lang].main}</h2>
 
-            <h3>Languages</h3>
+            <h3>{techStack.titles[lang].languages}</h3>
             <div className="icon-row">
               {techStack.languages.map((item) => (
                 <div key={item.name} className="icon-item">
@@ -130,7 +143,7 @@ export default function Contact({ lang }) {
               ))}
             </div>
 
-            <h3>Frameworks & Libraries</h3>
+            <h3>{techStack.titles[lang].frameworks}</h3>
             <div className="icon-row">
               {techStack.frameworks.map((item) => (
                 <div key={item.name} className="icon-item">
@@ -140,7 +153,7 @@ export default function Contact({ lang }) {
               ))}
             </div>
 
-            <h3>Databases & Other</h3>
+            <h3>{techStack.titles[lang].databases}</h3>
             <div className="icon-row">
               {techStack.databases.map((item) => (
                 <div key={item.name} className="icon-item">
