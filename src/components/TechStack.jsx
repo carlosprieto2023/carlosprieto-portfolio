@@ -57,8 +57,8 @@ function renderStack(stack) {
 
 export default function TechStack() {
   return (
-    <div>
-      <h2 className="techstack-title">Tech Stack</h2>
+    <div className="techstack-container">
+      <h3 className="techstack-title">Tech Stack</h3>
       <div className="techstack-category">
         <h3>Languages</h3>
         <ul className="techstack-list">{renderStack(languages)}</ul>

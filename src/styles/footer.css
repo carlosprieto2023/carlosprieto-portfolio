@@ -1,42 +1,93 @@
 /* ========== Footer ========== */
-.footer {
-  background-color: var(--footer-bg);
-  color: #94a3b8;
-  padding: 3rem 1.5rem;
-  text-align: center;
-  border-top: 1px solid #1f2937;
-  font-size: 0.95rem;
-}
-
-.footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
+.footer__container {
+  /* border: 1px solid blue; */
+  padding: var(--space-xs);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.25rem;
+  background-color: var(--body-bg);
 }
 
-.footer p {
-  margin: 0;
-  color: #64748b;
+.footer__container p {
+  font-family: var(--font-family-primary);
+  color: var(--font-color-subtle);
+  font-size: var(--font-size-footer-text);
+  font-weight: var(--font-weight-footer-text);
+  line-height: var(--line-height-footer-text);
 }
 
-/* ===== Social Links ===== */
-.footer-links {
+/* ===== Links ===== */
+.contact__links {
   display: flex;
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.footer-links a {
-  color: #e2e8f0;
-  text-decoration: none;
+.contact__link {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-footer-links);
+  font-weight: var(--font-weight-footer-links);
+  line-height: var(--line-height-footer-links);
+  color: var(--font-color-primary);
+  display: flex;
+  border-bottom: 2px solid;
+  align-items: center;
   font-weight: 500;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 
-.footer-links a:hover {
-  color: #02a676;
+.contact__link:hover {
+  color: var(--hover-color);
+  transform: translateY(-2px); /* gentle lift */
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 768px) {
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+  }
+
+  .footer__container p {
+    font-size: 0.9rem; /* slightly smaller text */
+    text-align: center;
+  }
+
+  .contact__links {
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .contact__link {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== Phone ===== */
+@media (max-width: 480px) {
+  .footer__container {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs);
+  }
+
+  .footer__container p {
+    font-size: 0.75rem; /* smaller text for phones */
+    text-align: center;
+  }
+
+  .contact__links {
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .contact__link {
+    font-size: 0.75rem;
+    padding-bottom: 2px; /* smaller underline */
+  }
 }

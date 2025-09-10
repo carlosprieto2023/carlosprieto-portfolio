@@ -1,38 +1,110 @@
+.techstack-container {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  background-color: rgba(13, 17, 23, 0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.techstack-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-bottom: 2px solid #02a676;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+}
+
+/* Section Headings */
 .techstack-category {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .techstack-category h3 {
-  font-size: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #7dd3fc;
   margin-bottom: 0.5rem;
-  text-align: center;
 }
 
+/* List Styles */
 .techstack-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
   justify-content: center;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
+/* Tech Items */
 .techstack-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 60px;
-  font-size: 0.7rem;
-  text-align: center;
+  gap: 0.35rem;
+  background-color: #1c1f26;
+  border: 1px solid #2a2e35;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #e6edf3;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.techstack-item:hover {
+  transform: translateY(-2px);
+  background-color: #272c33;
 }
 
 .techstack-icon {
-  width: 15px;
-  height: 15px;
-  margin-bottom: 0.3rem;
-  object-fit: contain;
-  filter: brightness(1) invert(1);
+  width: 16px;
+  height: 16px;
+  display: block;
 }
 
-.dark-mode .techstack-icon {
-  filter: invert(1);
+/* Responsive */
+@media (max-width: 768px) {
+  .techstack-title {
+    font-size: 1.1rem;
+  }
+
+  .techstack-category h3 {
+    font-size: 0.95rem;
+  }
+
+  .techstack-item {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.5rem;
+  }
+
+  .techstack-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .techstack-container {
+    padding: 0.75rem;
+  }
+
+  .techstack-list {
+    gap: 0.4rem;
+  }
+
+  .techstack-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+    padding: 0.35rem;
+  }
+
+  .techstack-title {
+    font-size: 1rem;
+  }
 }

@@ -1,49 +1,74 @@
-import profilePicDrawing from '../assets/profilePicDrawing.png';
-import Bubble from '../components/Bubble';
-import '../styles/Hero1.css';
-// import '../styles/hero.css';
+import downArrowVector from '../assets/downArrowVector.png';
+import heroImage from '../assets/heroImage.png';
+import '../styles/hero.css';
 
-export default function Hero() {
+export default function Hero({ lang }) {
+  const text = {
+    en: {
+      name: 'CARLOS PRIETO',
+      title: 'FULL STACK SOFTWARE DEVELOPER',
+      city: 'COLUMBUS,',
+      state: 'OHIO.',
+      subtitle:
+        'Turning ideas into performant digital products using full stack development!',
+      contactBtn: 'Contact Me',
+      resumeBtn: 'Download Resume',
+      scroll: 'SCROLL DOWN',
+    },
+    es: {
+      name: 'CARLOS PRIETO',
+      title: 'FULL STACK SOFTWARE DEVELOPER',
+      city: 'COLUMBUS,',
+      state: 'OHIO.',
+      subtitle:
+        'Transformando ideas en productos digitales eficientes, desarrollo full stack!',
+      contactBtn: 'Contáctame',
+      resumeBtn: 'Descargar Currículum',
+      scroll: 'DESPLAZARSE HACIA ABAJO',
+    },
+  };
+
   return (
     <section className="hero-section" id="hero">
-      {/* Background overlay */}
-      <div className="hero-overlay"></div>
-      <Bubble />
-
-      <div className="hero-container">
-        <div className="hero-content">
-          {/* Profile Image */}
-          <div className="hero-image-container">
-            <img
-              src={profilePicDrawing}
-              alt="Carlos Prieto portrait illustration"
-              className="hero-image"
-            />
-          </div>
-
-          {/* Heading */}
+      <div className="hero-content">
+        <div className="hero-content-left">
           <h1>
-            Hi, I’m Carlos Prieto
+            {text[lang].name}
             <br />
-            a&nbsp;
-            <span className="hero-highlight">
-              Full Stack Software Developer
+            <span>
+              {text[lang].title}
+              <br />
             </span>
-            &nbsp;based in Columbus, Ohio.
+            {text[lang].city}
+            <span> {text[lang].state}</span>
           </h1>
-
-          {/* Paragraph */}
-          <p>
-            I’m seeking a developer role where I can bring my problem-solving
-            mindset, adaptability, and dedication to building great software.
-            I’m eager to work alongside talented engineers, contribute
-            meaningful code, and continue evolving in this ever-changing field.
-          </p>
-
-          {/* CTA Button */}
-          <a href="#projects" className="hero-cta">
-            View My Work
-          </a>
+          <h2>{text[lang].subtitle}</h2>
+          <div className="cta-container">
+            <button
+              className="hero-cta-contact"
+              onClick={() =>
+                document
+                  .getElementById('contact')
+                  .scrollIntoView({ behavior: 'smooth' })
+              }
+            >
+              {text[lang].contactBtn}
+            </button>
+            <a
+              className="hero-cta-resume"
+              href="/assets/resume.pdf"
+              download="carlos-prieto-resume"
+            >
+              {text[lang].resumeBtn}
+            </a>
+          </div>
+        </div>
+        <div className="hero-content-right">
+          <img src={heroImage} alt="Carlos Prieto portrait" />
+        </div>
+        <div className="hero-footer-container">
+          <p>{text[lang].scroll}</p>
+          <img src={downArrowVector} alt="Down Arrow Vector" />
         </div>
       </div>
     </section>

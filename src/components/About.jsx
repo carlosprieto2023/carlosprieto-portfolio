@@ -1,42 +1,105 @@
-import '../styles/About1.css';
+import downArrowVector from '../assets/downArrowVector.png';
+import '../styles/about.css';
 
-export default function About() {
+export default function About({ lang }) {
+  const text = {
+    en: {
+      index: 'About Me',
+      heading: 'BUILDING IDEAS INTO REALITY',
+      paragraphs: [
+        [
+          'I’m a Full Stack Developer',
+          'who loves turning complex',
+          'problems into elegant, scalable solutions. From responsive interfaces',
+          'to robust backend systems,',
+          'I create digital experiences',
+          'that are both functional',
+          'and user-centered.',
+        ],
+        [
+          'Whether working independently or as part of a team,',
+          'I’m always focused on',
+          'writing clean code.',
+          'Staying adaptable,',
+          'and continuously improving',
+          'through learning and collaboration.',
+        ],
+      ],
+      quotes: [
+        'Code. Create. Collaborate.',
+        'Solutions through software.',
+        'Turning ideas into interactive experiences.',
+      ],
+      scroll: 'SCROLL DOWN',
+    },
+    es: {
+      index: 'Sobre Mí',
+      heading: 'CONSTRUYENDO IDEAS EN REALIDAD',
+      paragraphs: [
+        [
+          'Soy un Desarrollador Full Stack',
+          'que disfruta convertir problemas complejos',
+          'en soluciones elegantes y escalables. Desde interfaces responsivas',
+          ' hasta sistemas backend robustos,',
+          'creo experiencias digitales',
+          'que son funcionales',
+          'y centradas en el usuario.',
+        ],
+        [
+          'Ya sea trabajando de manera independiente o en equipo,',
+          'siempre me enfoco',
+          'en escribir código limpio,',
+          'mantenerme adaptable',
+          'y mejorar continuamente',
+          'a través del aprendizaje y la colaboración.',
+        ],
+      ],
+      quotes: [
+        'Codifica. Crea. Colabora.',
+        'Soluciones a través del software.',
+        'Convirtiendo ideas en experiencias interactivas.',
+      ],
+      scroll: 'DESPLAZARSE HACIA ABAJO',
+    },
+  };
+
+  const { index, heading, paragraphs, quotes, scroll } = text[lang];
+
   return (
     <section id="about" className="about-section">
-      {/* <div className="about-image-container">
-        <img
-          src="/path-to-your-image.jpg"
-          alt="Carlos Prieto"
-          className="about-image"
-        />
-      </div> */}
-      <h2>About </h2>
-      <div className="about-content">
-        <p>
-          Hi, I'm Carlos Prieto — a passionate full stack software developer
-          based in Columbus, Ohio. I specialize in building responsive,
-          performant web applications using the MERN stack.
-        </p>
-        <p>
-          My mission is to create impactful software solutions that are clean,
-          scalable, and user-friendly. Whether I'm working on frontend UI or
-          backend logic, I strive for pixel-perfect execution and efficient
-          architecture.
-        </p>
-        <p>
-          I bring strong communication, curiosity, and collaboration to every
-          project. I’m always eager to learn new technologies and improve as a
-          developer.
-        </p>
-        <p>
-          Outside of coding, I enjoy playing classical guitar, hitting the golf
-          course, and spending quality time with my family. These passions help
-          keep me grounded, focused, and inspired.
-        </p>
-        <p>
-          I'm always open to new opportunities, whether it's a freelance
-          project, a collaborative build, or a full-time position.
-        </p>
+      <div className="about-index-container">
+        <p>{index}</p>
+      </div>
+
+      <div className="about-main-container">
+        <div className="about-main-container-left">
+          <h2>{heading}</h2>
+          <div className="about-main-container-left-paragraph-container">
+            {paragraphs.map((para, idx) => (
+              <p key={idx}>
+                {para.map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div className="about-main-container-right">
+          <div className="about-main-container-right-paragraph">
+            {quotes.map((quote, idx) => (
+              <p key={idx}>{quote}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="about-footer-container">
+        <p>{scroll}</p>
+        <img src={downArrowVector} alt="Down Arrow Vector" />
       </div>
     </section>
   );

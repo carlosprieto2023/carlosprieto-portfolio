@@ -3,14 +3,16 @@
    ========================== */
 
 .project-card {
-  background-color: #161b22;
+  background-color: var(--body-bg);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex: 0 0 22rem;
+  max-width: 25rem;
+  scroll-snap-align: start; /* snap each card */
 }
 
 .project-card:hover {
@@ -22,59 +24,109 @@
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-bottom: 1px solid #2d333b;
+  /* border-bottom: 1px solid #2d333b; */
 }
 
 .project-content {
+  /* border: 1px solid red; */
+  text-align: center;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 0 1 auto;
 }
 
 .project-title {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  color: var(--font-color-primary);
+  opacity: 0.8;
 }
 
 .project-description {
-  flex-grow: 1;
   font-size: 0.95rem;
-  color: #c9d1d9;
+  color: var(--font-color-primary);
+  opacity: 0.7;
   margin-bottom: 1rem;
 }
 
-.project-links {
+.project-link {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1rem;
   margin-top: auto;
-}
-
-.project-links a {
-  color: #02a676;
+  color: var(--accent-color);
   font-weight: 500;
-  transition: color 0.3s ease;
   text-decoration: none;
 }
 
-.project-links a:hover {
-  color: #00c9a7;
+.project-link:hover {
+  color: var(--hover-color);
+  border-radius: 4px;
+  transform: translateY(-2px);
 }
 
-/* Responsive Tweaks */
-@media (max-width: 480px) {
+/* ===== Tablet (≤768px) ===== */
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 18rem; /* fixed width for horizontal scroll */
+    max-width: 18rem;
+    height: auto; /* wrap content naturally */
+    scroll-snap-align: start;
+    align-self: flex-start; /* prevent stretching */
+  }
+
+  .project-image {
+    height: 140px; /* proportional to card */
+  }
+
+  .project-content {
+    padding: 0.75rem;
+    flex: 0 1 auto; /* wrap content */
+  }
+
   .project-title {
     font-size: 1.1rem;
   }
 
   .project-description {
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 
-  .project-links a {
+  .project-link {
     font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+}
+
+/* ===== Phone (≤480px) ===== */
+@media (max-width: 480px) {
+  .project-card {
+    flex: 0 0 280px; /* slightly smaller card */
+  }
+
+  .project-image {
+    height: 120px;
+  }
+
+  .project-content {
+    padding: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-link {
+    gap: 0.5rem;
+    font-size: 0.85rem;
   }
 }
