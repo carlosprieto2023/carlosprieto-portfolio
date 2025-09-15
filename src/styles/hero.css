@@ -15,7 +15,7 @@
 
 /* ------- Hero Main Content ---------- */
 .hero-content {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -27,7 +27,7 @@
 
 /* Hero Content Left */
 .hero-content-left {
-  border: 1px dotted black;
+  /* border: 1px dotted black; */
   max-width: 500px;
   display: flex;
   flex-direction: column;
@@ -130,7 +130,7 @@
 
 /* ------- Hero Footer ------- */
 .hero-footer-container {
-  border: 1px dotted black;
+  /* border: 1px dotted black; */
   position: absolute;
   bottom: 8px;
   right: 8px;
