@@ -9,8 +9,9 @@ export default function Hero({ lang }) {
       title: 'FULL STACK SOFTWARE DEVELOPER',
       city: 'COLUMBUS,',
       state: 'OHIO.',
-      subtitle:
+      subtitle: [
         'Turning ideas into performant digital products using full stack development!',
+      ],
       contactBtn: 'Contact Me',
       resumeBtn: 'Download Resume',
       scroll: 'SCROLL DOWN',
@@ -20,8 +21,9 @@ export default function Hero({ lang }) {
       title: 'FULL STACK SOFTWARE DEVELOPER',
       city: 'COLUMBUS,',
       state: 'OHIO.',
-      subtitle:
+      subtitle: [
         'Transformando ideas en productos digitales eficientes, desarrollo full stack!',
+      ],
       contactBtn: 'Contáctame',
       resumeBtn: 'Descargar Currículum',
       scroll: 'DESPLAZARSE HACIA ABAJO',
