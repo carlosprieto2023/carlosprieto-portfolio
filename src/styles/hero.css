@@ -7,10 +7,10 @@
   align-self: stretch;
   position: relative;
   padding: var(--space-xl) var(--space-lg);
-  min-height: auto;
   margin: 0 auto;
   scroll-margin-top: var(--header-height);
   margin-bottom: var(--space-2xl);
+  max-height: 90vh;
 }
 
 /* ------- Hero Main Content ---------- */
@@ -20,7 +20,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
+  align-items: flex-start;
   align-content: center;
   gap: var(--space-xl);
 }
@@ -37,6 +37,7 @@
 }
 
 .hero-content-left h1 {
+  /* border: 1px dotted red; */
   font-family: var(--font-family-hero-h1);
   -webkit-text-stroke: 1px var(--font-color-primary);
   color: var(--font-color-primary);
@@ -65,9 +66,11 @@
 
 /* CTA Container */
 .cta-container {
+  /* border: 1px dotted black; */
   display: flex;
   flex-wrap: wrap;
   gap: 16px; /* even space between buttons */
+  margin-top: 2rem;
 }
 
 .hero-cta-contact,

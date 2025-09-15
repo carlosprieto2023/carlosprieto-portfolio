@@ -32,15 +32,11 @@
 
   /* HERO */
   --font-size-hero-h1: clamp(
-    2.5rem,
-    4vw,
-    4rem
+    2rem,
+    3vw,
+    3.5rem
   ); /* 40–64px, large impactful (can be 6vw)*/
-  --font-size-hero-h2: clamp(
-    1.125rem,
-    2.5vw,
-    1.75rem
-  ); /* 18–28px, clear subtitle */
+  --font-size-hero-h2: clamp(1rem, 2vw, 1.5rem); /* 18–28px, clear subtitle */
 
   /* SECTIONS */
   --font-size-section-heading-h2: clamp(1.75rem, 3vw, 2.25rem); /* 28–36px */
