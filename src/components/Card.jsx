@@ -8,12 +8,12 @@ export default function ProjectCard({ title, description, link, image, lang }) {
 
   return (
     <div className="project-card">
-      <img className="project-image" src={image} alt={title[lang]} />
-      <div className="project-content">
-        <h3 className="project-title">{title[lang]}</h3>
-        <p className="project-description">{description[lang]}</p>
+      <img className="project-card__image" src={image} alt={title[lang]} />
+      <div className="project-card__content">
+        <h3 className="project-card__title">{title[lang]}</h3>
+        <p className="project-card__description">{description[lang]}</p>
         <a
-          className="project-link"
+          className="project-card__link"
           href={link}
           target="_blank"
           rel="noopener noreferrer"

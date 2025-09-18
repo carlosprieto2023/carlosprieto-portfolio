@@ -1,60 +1,54 @@
-/* globals */
 :root {
+  /* Spacing Scale (fluid) */
+  --space-xs: clamp(0.25rem, 0.5vw, 0.5rem); /* 4–8px */
+  --space-sm: clamp(0.5rem, 1vw, 1rem); /* 8–16px */
+  --space-md: clamp(1rem, 2vw, 1.5rem); /* 16–24px */
+  --space-lg: clamp(1.25rem, 3vw, 2rem); /* 20–32px */
+  --space-xl: clamp(2rem, 5vw, 3rem); /* 32–48px */
+  --space-2xl: clamp(2.5rem, 7vw, 4rem); /* 40–64px */
+
   /* Header Height */
-  --header-height: 3.75rem; /* 60px / 16 = 3.75rem */
+  --header-height: 3.75rem; /* 60px */
 
-  /* Background Color */
-  --body-bg: #f5f5f5; /* slightly softer neutral */
-  --section-bg: #ffffff; /* sections pop from body */
+  /* Colors */
+  --body-bg: #f5f5f5;
+  --section-bg: #ffffff;
   --accent-color: rgb(188, 49, 234);
-
-  /* Hover Color (subtle shift from accent) */
   --hover-color: rgb(208, 79, 254);
-  /* #a44bd4 */
 
   /* Transitions */
   --transition-fast: 0.25s ease;
   --transition-slow: 0.4s ease;
 
-  /* Font Family */
-  --font-family-hero-h1: 'Bebas Neue', sans-serif; /* strong display */
-  --font-family-primary: 'Poppins', sans-serif; /* main readable text */
-  --font-family-index: 'Oswald', sans-serif; /* secondary display */
+  /* Fonts */
+  --font-family-hero-h1: 'Bebas Neue', sans-serif;
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-family-index: 'Oswald', sans-serif;
 
-  /* Font Color */
-  --font-color-primary: #111111; /* darker for better contrast */
-  --font-color-secondary: #ffffff;
-  --font-color-subtle: #6b6b6b; /* slightly softer than #767676 */
+  /* Font Colors */
+  --font-color-primary: #111;
+  --font-color-secondary: #fff;
+  --font-color-subtle: #6b6b6b;
 
-  /* Font Sizes (Responsive with clamp) */
-  --font-size-header-logo: clamp(1.25rem, 2vw, 1.5rem); /* 20–24px */
-  --font-size-header-menu: clamp(0.875rem, 1.25vw, 1rem); /* 14–16px */
+  /* Responsive Font Sizes */
+  --font-size-header-logo: clamp(1.25rem, 2vw, 1.5rem);
+  --font-size-header-menu: clamp(0.875rem, 1.25vw, 1rem);
+  --font-size-hero-h1: clamp(2rem, 5vw, 3rem);
+  --font-size-hero-h2: clamp(1rem, 2vw, 1.5rem);
+  --font-size-section-heading-h2: clamp(1.75rem, 3vw, 2.25rem);
+  --font-size-section-heading-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --font-size-section-heading-h4: clamp(1rem, 1.5vw, 1.125rem);
+  --font-size-paragraph: clamp(1rem, 1.5vw, 1.125rem);
+  --font-size-small: clamp(0.8125rem, 1.2vw, 0.875rem);
+  --font-size-cta: clamp(0.95rem, 1.5vw, 1.125rem);
+  --font-size-footer-text: clamp(0.8125rem, 1.2vw, 0.875rem);
+  --font-size-footer-links: clamp(0.875rem, 1.2vw, 1rem);
 
-  /* HERO */
-  --font-size-hero-h1: clamp(
-    2rem,
-    3vw,
-    3.5rem
-  ); /* 40–64px, large impactful (can be 6vw)*/
-  --font-size-hero-h2: clamp(1rem, 2vw, 1.5rem); /* 18–28px, clear subtitle */
-
-  /* SECTIONS */
-  --font-size-section-heading-h2: clamp(1.75rem, 3vw, 2.25rem); /* 28–36px */
-  --font-size-section-heading-h3: clamp(1.25rem, 2vw, 1.5rem); /* 20–24px */
-  --font-size-section-heading-h4: clamp(1rem, 1.5vw, 1.125rem); /* 16–18px */
-
-  /* TEXT */
-  --font-size-paragraph: clamp(1rem, 1.5vw, 1.125rem); /* 16–18px */
-  --font-size-small: clamp(0.8125rem, 1.2vw, 0.875rem); /* 13–14px */
-  --font-size-cta: clamp(0.95rem, 1.5vw, 1.125rem); /* 15–18px */
-  --font-size-footer-text: clamp(0.8125rem, 1.2vw, 0.875rem); /* 13–14px */
-  --font-size-footer-links: clamp(0.875rem, 1.2vw, 1rem); /* 14–16px */
-
-  /* Font Weight */
+  /* Font Weights & Line Heights (as you already had) */
   --font-weight-header-logo: 700;
   --font-weight-header-menu: 500;
-  --font-weight-hero-h1: 700; /* bold display */
-  --font-weight-hero-h2: 500; /* lighter contrast */
+  --font-weight-hero-h1: 700;
+  --font-weight-hero-h2: 500;
   --font-weight-section-heading-h2: 600;
   --font-weight-section-heading-h3: 500;
   --font-weight-paragraph: 400;
@@ -63,27 +57,19 @@
   --font-weight-footer-text: 400;
   --font-weight-footer-links: 500;
 
-  /* Line Height (optimized for readability) */
   --line-height-header-logo: 1.2;
   --line-height-header-menu: 1.4;
-  --line-height-hero-h1: 1.1; /* tighter for display text */
-  --line-height-hero-h2: 1.4; /* more breathing space */
+  --line-height-hero-h1: 1.1;
+  --line-height-hero-h2: 1.4;
   --line-height-section-heading-h2: 1.3;
   --line-height-section-heading-h3: 1.35;
-  --line-height-paragraph: 1.6; /* best for long-form text */
+  --line-height-paragraph: 1.6;
   --line-height-small: 1.4;
   --line-height-cta: 1.3;
   --line-height-footer-text: 1.4;
   --line-height-footer-links: 1.4;
-
-  /* Spacing Scale (8pt system) */
-  --space-xs: 0.5rem; /* 8px */
-  --space-sm: 1rem; /* 16px */
-  --space-md: 1.5rem; /* 24px */
-  --space-lg: 2rem; /* 32px */
-  --space-xl: 3rem; /* 48px */
-  --space-2xl: 4rem; /* 64px */
 }
+
 /* ===== Reset ===== */
 *,
 *::before,
@@ -99,13 +85,38 @@ html {
 }
 
 body {
-  background-color: var(--body-bg);
-  color: #e6edf3;
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
   line-height: 1.6;
+  background-color: var(--body-bg);
+  color: var(--font-color-primary);
+}
+
+/* ===== App Container ===== */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   /* overflow-x: hidden; */
 }
 
-.app-container {
-  max-width: 1460px;
-  margin: 0 auto;
+/* ===== Section Layouts ===== */
+section {
+  /* border: 1px solid black; */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: clamp(2rem, 5vh, 4rem) clamp(1rem, 3vw, 2rem);
+  scroll-margin-top: var(--header-height);
+  background: var(--section-bg);
+}
+
+@media (max-width: 576px) {
+  .app-container {
+    padding: 0 var(--space-sm);
+  }
 }

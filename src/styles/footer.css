@@ -43,23 +43,24 @@
   transform: translateY(-2px); /* gentle lift */
 }
 
-/* ===== Tablet ===== */
+/* ===== Responsive Breakpoints ===== */
+
+/* ===== Tablet (≤ 768px) ===== */
 @media (max-width: 768px) {
   .footer__container {
     flex-direction: column;
     align-items: center;
     gap: var(--space-sm);
     padding: var(--space-sm);
+    text-align: center;
   }
 
   .footer__container p {
-    font-size: 0.9rem; /* slightly smaller text */
-    text-align: center;
+    font-size: 0.9rem; /* slightly smaller */
   }
 
   .contact__links {
     gap: 1rem;
-    justify-content: center;
   }
 
   .contact__link {
@@ -67,27 +68,24 @@
   }
 }
 
-/* ===== Phone ===== */
+/* ===== Phone (≤ 480px) ===== */
 @media (max-width: 480px) {
   .footer__container {
-    flex-direction: column;
-    align-items: center;
     gap: var(--space-xs);
-    padding: var(--space-xs);
+    padding: var(--space-sm);
   }
 
   .footer__container p {
-    font-size: 0.75rem; /* smaller text for phones */
-    text-align: center;
+    font-size: 0.8rem; /* compact text */
   }
 
   .contact__links {
-    gap: 0.75rem;
-    justify-content: center;
+    flex-direction: column; /* stack links */
+    gap: 0.5rem;
   }
 
   .contact__link {
-    font-size: 0.75rem;
-    padding-bottom: 2px; /* smaller underline */
+    font-size: 0.85rem;
+    justify-content: center; /* center links */
   }
 }

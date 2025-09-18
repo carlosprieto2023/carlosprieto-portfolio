@@ -31,47 +31,51 @@ export default function Hero({ lang }) {
   };
 
   return (
-    <section className="hero-section" id="hero">
-      <div className="hero-content">
-        <div className="hero-content-left">
-          <h1>
-            {text[lang].name}
+    <section className="hero" id="hero">
+      <div className="hero__content">
+        <h1 className="hero__title">
+          {text[lang].name}
+          <br />
+          <span className="hero__title--highlight">
+            {text[lang].title}
             <br />
-            <span>
-              {text[lang].title}
-              <br />
-            </span>
-            {text[lang].city}
-            <span> {text[lang].state}</span>
-          </h1>
-          <h2>{text[lang].subtitle}</h2>
-          <div className="cta-container">
-            <button
-              className="hero-cta-contact"
-              onClick={() =>
-                document
-                  .getElementById('contact')
-                  .scrollIntoView({ behavior: 'smooth' })
-              }
-            >
-              {text[lang].contactBtn}
-            </button>
-            <a
-              className="hero-cta-resume"
-              href="/assets/resume.pdf"
-              download="carlos-prieto-resume"
-            >
-              {text[lang].resumeBtn}
-            </a>
-          </div>
+          </span>
+          {text[lang].city}
+          <span className="hero__title--secondary"> {text[lang].state}</span>
+        </h1>
+        <p className="hero__subtitle">{text[lang].subtitle}</p>
+        <div className="hero__cta">
+          <a
+            className="btn btn-primary"
+            onClick={() =>
+              document
+                .getElementById('contact')
+                .scrollIntoView({ behavior: 'smooth' })
+            }
+          >
+            {text[lang].contactBtn}
+          </a>
+          <a
+            className="btn btn-secondary"
+            href="/assets/resume.pdf"
+            download="carlos-prieto-resume"
+          >
+            {text[lang].resumeBtn}
+          </a>
         </div>
-        <div className="hero-content-right">
-          <img src={heroImage} alt="Carlos Prieto portrait" />
-        </div>
-        <div className="hero-footer-container">
-          <p>{text[lang].scroll}</p>
-          <img src={downArrowVector} alt="Down Arrow Vector" />
-        </div>
+      </div>
+      {/* Hero Image */}
+      <div className="hero__image">
+        <img src={heroImage} alt="Carlos Prieto portrait" />
+      </div>
+      {/* Hero Footer */}
+      <div className="hero__footer">
+        <p className="hero__footer-text">{text[lang].scroll}</p>
+        <img
+          className="hero__footer-icon"
+          src={downArrowVector}
+          alt="Down Arrow Vector"
+        />
       </div>
     </section>
   );

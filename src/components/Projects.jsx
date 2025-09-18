@@ -1,13 +1,11 @@
-import { useRef } from 'react';
-import taskManagerImage from '../assets/quickNoteApp.png';
-import '../styles/projects.css';
-// import '../styles/projects.css';
+import { useState } from 'react';
+import downArrowVector from '../assets/downArrowVector.png';
 import leftArrowScroll from '../assets/leftSideArrowScrollVector.svg';
+import taskManagerImage from '../assets/quickNoteApp.png';
 import rightArrowScroll from '../assets/rightSideArrowScrollVector.svg';
 import weatherAppImg from '../assets/weatherAppImage.png';
+import '../styles/projects.css';
 import ProjectCard from './Card';
-
-import downArrowVector from '../assets/downArrowVector.png';
 
 const projects = [
   {
@@ -15,7 +13,7 @@ const projects = [
     title: { en: 'Weather App', es: 'Aplicación del Clima' },
     description: {
       en: 'A React app that shows real-time weather info by city.',
-      es: 'Una app en React que muestra información del clima en tiempo real.',
+      es: 'Una app que muestra información del clima en tiempo real.',
     },
     image: weatherAppImg,
     link: 'https://yourweatherapp.com',
@@ -43,56 +41,75 @@ const projects = [
 ];
 
 export default function Projects({ lang }) {
+  const [current, setCurrent] = useState(0);
+
+  function prevSlide() {
+    setCurrent((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
+  }
+
+  function nextSlide() {
+    setCurrent((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+  }
+
   const text = {
-    en: {
-      index: 'Projects',
-      scroll: 'SCROLL DOWN',
-    },
-    es: {
-      index: 'Proyectos',
-      scroll: 'DESPLAZARSE HACIA ABAJO',
-    },
+    en: { index: 'Projects', scroll: 'SCROLL DOWN' },
+    es: { index: 'Proyectos', scroll: 'DESPLAZARSE HACIA ABAJO' },
   };
-  const scrollRef = useRef(null);
-
-  function scrollLeft() {
-    scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-  }
-
-  function scrollRight() {
-    scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-  }
 
   return (
-    <section className="projects-section" id="projects">
-      <div className="projects-index-container">
+    <section className="projects" id="projects">
+      <div className="projects__index">
         <p>{text[lang].index}</p>
       </div>
-      <div className="projects-main-container">
-        <div className="projects-main-container-left-column">
-          <div className="icon-wrapper">
+
+      <div className="projects__content">
+        {/* Carousel */}
+        <div className="projects__carousel">
+          {projects.map((project, index) => {
+            const position =
+              (index - current + projects.length) % projects.length;
+
+            let className = 'carousel-card';
+            if (position === 0) className += ' active'; // center card
+            else if (position === 1) className += ' right'; // next card
+            else if (position === projects.length - 1)
+              className += ' left'; // prev card
+            else className += ' hidden'; // others invisible
+
+            return (
+              <div key={project.id} className={className}>
+                <ProjectCard {...project} lang={lang} />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Sidebar with arrows */}
+        <div className="projects__arrows">
+          <div className="projects__icons">
             <img
               src={leftArrowScroll}
-              alt="Left Arrow Scroll"
-              onClick={scrollLeft}
+              alt="Left Arrow"
+              onClick={prevSlide}
+              style={{ cursor: 'pointer' }}
             />
             <img
               src={rightArrowScroll}
-              alt="Right Arrow Scroll"
-              onClick={scrollRight}
+              alt="Right Arrow"
+              onClick={nextSlide}
+              style={{ cursor: 'pointer' }}
             />
           </div>
         </div>
-        <div className="projects-main-container-right-column">
-          <div className="projects-grid" ref={scrollRef}>
-            {projects.map((project) => (
-              <ProjectCard key={project.id} {...project} lang={lang} />
-            ))}
-          </div>
-        </div>
-        <div className="projects-footer-container">
-          <p>{text[lang].scroll}</p>
-          <img src={downArrowVector} alt="Down Arrow Vector" />
+
+        {/* Footer */}
+        <div className="projects__footer">
+          <p className="projects__scroll">{text[lang].scroll}</p>
+          <img
+            src={downArrowVector}
+            alt="Down Arrow"
+            className="projects__icon"
+          />
         </div>
       </div>
     </section>

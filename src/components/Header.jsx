@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import '../styles/header.css';
-// import '../styles/header.css';
 
 export default function Header({ lang, toggleLang }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,29 +16,19 @@ export default function Header({ lang, toggleLang }) {
     if (window.innerWidth <= 768) setMenuOpen((prev) => !prev);
   };
 
-  // Text content
   const text = {
-    en: {
-      about: 'About Me',
-      projects: 'Projects',
-      contact: 'Contact',
-      langBtn: 'Español',
-    },
-    es: {
-      about: 'Acerca',
-      projects: 'Proyectos',
-      contact: 'Contacto',
-      langBtn: 'English',
-    },
+    en: { about: 'About Me', projects: 'Projects', contact: 'Contact' },
+    es: { about: 'Acerca', projects: 'Proyectos', contact: 'Contacto' },
   };
 
   return (
-    <header className="header_container">
+    <header className="header">
       <div className="header_logo">
         <a href="#hero" aria-label="Go to top">
           C<span>P</span>
         </a>
       </div>
+
       {/* Hamburger */}
       <button
         className={`hamburger ${menuOpen ? 'open' : ''}`}
@@ -51,12 +40,13 @@ export default function Header({ lang, toggleLang }) {
         <span className="bar"></span>
         <span className="bar"></span>
       </button>
-      {/* Nav Menu*/}
+
+      {/* Nav Menu */}
       <nav
-        className={`nav-links-container ${menuOpen ? 'open' : ''}`}
+        className={`nav ${menuOpen ? 'open' : ''}`}
         aria-label="Main navigation"
       >
-        <ul>
+        <ul className="nav__links">
           <li>
             <a href="#about" onClick={toggleMenu}>
               {text[lang].about}
@@ -72,8 +62,34 @@ export default function Header({ lang, toggleLang }) {
               {text[lang].contact}
             </a>
           </li>
-          <button onClick={toggleLang}>{text[lang].langBtn}</button>
         </ul>
+
+        {/* Language Toggle pinned right */}
+        <button
+          className="lang-toggle"
+          onClick={() => {
+            toggleLang();
+            if (isMobile) {
+              setMenuOpen(false); // Close menu if mobile/tablet
+            }
+          }}
+        >
+          {lang === 'en' ? (
+            <>
+              <span role="img" aria-label="Español">
+                🇪🇸
+              </span>
+              <span>ES</span>
+            </>
+          ) : (
+            <>
+              <span role="img" aria-label="English">
+                🇬🇧
+              </span>
+              <span>EN</span>
+            </>
+          )}
+        </button>
       </nav>
 
       {menuOpen && isMobile && (

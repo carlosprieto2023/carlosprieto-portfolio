@@ -15,8 +15,6 @@ export default function About({ lang }) {
           'I create digital experiences',
           'that are both functional',
           'and user-centered.',
-        ],
-        [
           'Whether working independently or as part of a team,',
           'I’m always focused on',
           'writing clean code.',
@@ -44,8 +42,6 @@ export default function About({ lang }) {
           'creo experiencias digitales',
           'que son funcionales',
           'y centradas en el usuario.',
-        ],
-        [
           'Ya sea trabajando de manera independiente o en equipo,',
           'siempre me enfoco',
           'en escribir código limpio,',
@@ -66,40 +62,43 @@ export default function About({ lang }) {
   const { index, heading, paragraphs, quotes, scroll } = text[lang];
 
   return (
-    <section id="about" className="about-section">
-      <div className="about-index-container">
+    <section id="about" className="about">
+      {/* Index */}
+      <div className="about__index">
         <p>{index}</p>
       </div>
+      {/* Content */}
 
-      <div className="about-main-container">
-        <div className="about-main-container-left">
-          <h2>{heading}</h2>
-          <div className="about-main-container-left-paragraph-container">
-            {paragraphs.map((para, idx) => (
-              <p key={idx}>
-                {para.map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-              </p>
+      <h2 className="about__heading">{heading}</h2>
+      <div className="about-content ">
+        {paragraphs.map((para, idx) => (
+          <p key={idx} className="about__paragraph">
+            {para.map((line, i) => (
+              <span key={i}>
+                {line}
+                <br />
+              </span>
             ))}
-          </div>
-        </div>
-
-        <div className="about-main-container-right">
-          <div className="about-main-container-right-paragraph">
-            {quotes.map((quote, idx) => (
-              <p key={idx}>{quote}</p>
-            ))}
-          </div>
+          </p>
+        ))}
+        {/* Quotes */}
+        <div className="about__quotes">
+          {quotes.map((quote, idx) => (
+            <p key={idx} className="about__quote">
+              {quote}
+            </p>
+          ))}
         </div>
       </div>
 
-      <div className="about-footer-container">
-        <p>{scroll}</p>
-        <img src={downArrowVector} alt="Down Arrow Vector" />
+      {/* Footer */}
+      <div className="about__footer">
+        <p className="about__scroll">{scroll}</p>
+        <img
+          src={downArrowVector}
+          alt="Down Arrow Vector"
+          className="about__icon"
+        />
       </div>
     </section>
   );

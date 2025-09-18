@@ -128,12 +128,11 @@ export default function Contact({ lang }) {
             <h3>{text[lang].subtitle}</h3>
           </div>
 
-          {/* <img src={teckStackImg} alt="Tech Stack" /> */}
           {/* Teck Stack */}
           <div className="tech-stack">
-            <h2>{techStack.titles[lang].main}</h2>
+            <h3>{techStack.titles[lang].main}</h3>
 
-            <h3>{techStack.titles[lang].languages}</h3>
+            <h4>{techStack.titles[lang].languages}</h4>
             <div className="icon-row">
               {techStack.languages.map((item) => (
                 <div key={item.name} className="icon-item">
@@ -143,7 +142,7 @@ export default function Contact({ lang }) {
               ))}
             </div>
 
-            <h3>{techStack.titles[lang].frameworks}</h3>
+            <h4>{techStack.titles[lang].frameworks}</h4>
             <div className="icon-row">
               {techStack.frameworks.map((item) => (
                 <div key={item.name} className="icon-item">
@@ -153,7 +152,7 @@ export default function Contact({ lang }) {
               ))}
             </div>
 
-            <h3>{techStack.titles[lang].databases}</h3>
+            <h4>{techStack.titles[lang].databases}</h4>
             <div className="icon-row">
               {techStack.databases.map((item) => (
                 <div key={item.name} className="icon-item">
@@ -165,6 +164,7 @@ export default function Contact({ lang }) {
           </div>
         </div>
 
+        {/* Form */}
         <div className="contact__right-container">
           <div className="contact__form-wrapper">
             <form className="contact__form" onSubmit={handleSubmit}>
